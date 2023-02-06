@@ -129,22 +129,22 @@ export class MyLinkWidget extends React.Component<MyLinkProps, MyLinkState> {
 			}
 		} else {
 			//draw the multiple anchors and complex line instead
-			for (let j = 0; j < points.length - 1; j++) {
-				paths.push(
-					this.generateLink(
-						LinkWidget.generateLinePath(points[j], points[j + 1]),
-						{
-							'data-linkid': this.props.link.getID(),
-							'data-point': j,
-							//onMouseDown: (event: MouseEvent) => {
-							//	this.props.selected?.(event);
-							//	this.addPointToLink(event, j + 1);
-							//}
-						},
-						j
-					)
-				);
-			}
+			//for (let j = 0; j < points.length - 1; j++) {
+			//	paths.push(
+			//		this.generateLink(
+			//			LinkWidget.generateLinePath(points[j], points[j + 1]),
+			//			{
+			//				'data-linkid': this.props.link.getID(),
+			//				'data-point': j,
+			//				//onMouseDown: (event: MouseEvent) => {
+			//				//	this.props.selected?.(event);
+			//				//	this.addPointToLink(event, j + 1);
+			//				//}
+			//			},
+			//			j
+			//		)
+			//	);
+			//}
 
 			if (this.renderPoints()) {
 				//render the circles

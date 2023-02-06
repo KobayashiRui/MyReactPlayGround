@@ -2,7 +2,7 @@ import { CanvasEngine } from "@projectstorm/react-canvas-core";
 import { NodeModel, NodeModelGenerics, DefaultPortModel } from "@projectstorm/react-diagrams";
 import {MyPortModel} from "../../CustomPort/MyPort"
 
-class TestNodeModel extends NodeModel<NodeModelGenerics> {
+class NumberSliderNodeModel extends NodeModel<NodeModelGenerics> {
   value = 0;
   outPort = new MyPortModel({
     in: false,
@@ -10,7 +10,7 @@ class TestNodeModel extends NodeModel<NodeModelGenerics> {
     })
 
   constructor(readonly engine: CanvasEngine, value: number) {
-    super({ type: "numeric-node" });
+    super({ type: "number-slider-node" });
     this.addPort(this.outPort);
 
     this.value = value;
@@ -18,7 +18,6 @@ class TestNodeModel extends NodeModel<NodeModelGenerics> {
 
   setValue(value: number | string) {
     this.value = isNaN(+value) ? 0 : +value;
-    console.log("test node:",this.value);
     this.engine.repaintCanvas();
   }
 
@@ -30,4 +29,4 @@ class TestNodeModel extends NodeModel<NodeModelGenerics> {
   }
 }
 
-export default TestNodeModel;
+export default NumberSliderNodeModel;

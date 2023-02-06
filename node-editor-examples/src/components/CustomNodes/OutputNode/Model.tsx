@@ -1,7 +1,9 @@
 import { CanvasEngine } from "@projectstorm/react-canvas-core";
 import { NodeModel, NodeModelGenerics, DefaultPortModel } from "@projectstorm/react-diagrams";
-import TestNodeModel from "../TestNode/Model";
 import {MyPortModel} from "../../CustomPort/MyPort"
+import TestNodeModel from "../TestNode/Model";
+import NumberSliderNodeModel from "../NumberSliderNode/Model";
+import LinearArrayNodeModel from "../LinearArrayNode/Model";
 
 class OutputNodeModel extends NodeModel<NodeModelGenerics> {
   inPort = new MyPortModel({
@@ -14,14 +16,13 @@ class OutputNodeModel extends NodeModel<NodeModelGenerics> {
     this.addPort(this.inPort);
   }
 
-  getNumber(port: DefaultPortModel): number {
+  getNumber(port: DefaultPortModel): number | string {
     const link = Object.values(port.getLinks())[0];
     const node = link?.getSourcePort()?.getNode();
-    //if (node instanceof NumericNodeModel || node instanceof OperatorNodeModel) {
-    //  return node.value;
-    //}
-    if (node instanceof TestNodeModel){
+    if (node instanceof TestNodeModel || node instanceof NumberSliderNodeModel){
       return node.value;
+    }else if(node instanceof LinearArrayNodeModel){
+      return node.value.toString();
     }
 
     return 0;
