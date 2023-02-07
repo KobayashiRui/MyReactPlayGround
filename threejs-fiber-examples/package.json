@@ -11,6 +11,8 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "@theatre/core": "^0.4.7",
+    "@theatre/studio": "^0.4.7",
     "@types/jest": "^24.9.1",
     "@types/node": "^12.20.47",
     "@types/react": "^16.14.23",
