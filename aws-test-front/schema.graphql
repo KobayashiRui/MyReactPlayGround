@@ -1,0 +1,8 @@
+﻿type Query {
+	# Get a single value of type 'Post' by primary key.
+	getUrl(key: String, method: String, content_type: String): String
+}
+
+schema {
+	query: Query
+}
