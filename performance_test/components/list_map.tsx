@@ -1,3 +1,5 @@
+import ListContent from "./list_content"
+
 type ListMapProps = {
   data: any[];
 }
@@ -9,7 +11,10 @@ export default function ListMap({data}: ListMapProps) {
       {
         data.map((d) => {
           return(
-            <span>{d}</span>
+            <ListContent
+              key={d}
+              data={d}
+            ></ListContent>
           )
         })
       }
