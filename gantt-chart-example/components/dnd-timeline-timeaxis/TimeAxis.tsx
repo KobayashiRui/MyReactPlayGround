@@ -85,7 +85,6 @@ function TimeAxis(props: TimeAxisProps) {
                 alignItems: "flex-end",
                 height: "100%",
                 border: "1px solid gray",
-                borderCollapse: "collapse",
                 width: `${marker.widthDelta}px`,
                 [side]: `${marker.sideDelta}px`,
               }}

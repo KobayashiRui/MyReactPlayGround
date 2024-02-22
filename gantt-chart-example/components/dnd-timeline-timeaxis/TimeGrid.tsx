@@ -60,11 +60,10 @@ function TimeGrid() {
               style={
                 {
                   height: "100%",
-                  width: "1px",
-                  //zIndex: 3,
+                  width: "2px",
                   backgroundColor: "gray",
                   position: "absolute",
-                  [side]: `${line.sideDelta}px`,
+                  [side]: `${line.sideDelta-1}px`,
                 }
               }
             />

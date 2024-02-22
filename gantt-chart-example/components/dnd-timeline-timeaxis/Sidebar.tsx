@@ -8,7 +8,7 @@ interface SidebarProps {
 function Sidebar(props: SidebarProps) {
   return (
     <div
-      style={{ width: 200, border: "1px solid grey" }}
+      style={{paddingLeft:100, width: 250, border: "1px solid grey" }}
     >{`Row ${props.row.id}`}</div>
   );
 }
