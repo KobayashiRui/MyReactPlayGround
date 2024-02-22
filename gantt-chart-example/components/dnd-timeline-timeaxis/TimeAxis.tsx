@@ -17,6 +17,7 @@ export interface MarkerDefinition {
 }
 
 interface TimeAxisProps {
+  top_markers: MarkerDefinition[];
   markers: MarkerDefinition[];
 }
 
@@ -69,7 +70,20 @@ function TimeAxis(props: TimeAxisProps) {
     return markerSideDeltas;
   }, [timeframe, millisecondsToPixels, props.markers]);
 
+
   return (
+    <div>
+    <div
+      style={{
+        height: "20px",
+        position: "relative",
+        overflow: "hidden",
+        [side === "right" ? "marginRight" : "marginLeft"]: `${sidebarWidth}px`,
+      }}
+    >
+      <div>Test</div>
+    </div>
+
     <div
       style={{
         height: "20px",
@@ -103,7 +117,9 @@ function TimeAxis(props: TimeAxisProps) {
             <div
               style={{
                 fontSize: "0.6rem",
-                alignSelf: "flex-start",
+                marginLeft: "0.05rem",
+                alignSelf: "center",
+                justifyContent: "center",
                 fontWeight: marker.heightMultiplier * 1000,
               }}
             >
@@ -112,6 +128,7 @@ function TimeAxis(props: TimeAxisProps) {
           ) : null}
         </div>
       ))}
+    </div>
     </div>
   );
 }
