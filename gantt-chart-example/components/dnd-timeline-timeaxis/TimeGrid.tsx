@@ -42,8 +42,9 @@ function TimeGrid() {
   return (
     <div
       style={{
-        zIndex: 3,
+        //zIndex: 0,
         width: "100%",
+        marginTop: "40px",
         height: "100%",
         position: "absolute",
         display: "flex",
@@ -55,11 +56,12 @@ function TimeGrid() {
         lines.map( (line, index)=> {
           return (
             <div
+              key={index}
               style={
                 {
                   height: "100%",
                   width: "1px",
-                  zIndex: 3,
+                  //zIndex: 3,
                   backgroundColor: "gray",
                   position: "absolute",
                   [side]: `${line.sideDelta}px`,

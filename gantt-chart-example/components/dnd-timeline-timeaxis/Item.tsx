@@ -20,10 +20,10 @@ function Item(props: ItemProps) {
       <div style={itemContentStyle}>
         <div
           style={{
+            backgroundColor: "green",
             border: "1px solid white",
             width: "100%",
             overflow: "hidden",
-            zIndex: 4,
           }}
         >
           {props.children}

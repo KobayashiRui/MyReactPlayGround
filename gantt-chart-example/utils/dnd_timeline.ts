@@ -14,10 +14,10 @@ interface GenerateRowsOptions {
 export const generateRows = (count: number, options?: GenerateRowsOptions) => {
   return Array(count)
     .fill(0)
-    .map((e, i): RowDefinition => {
+    .map((): RowDefinition => {
       const disabled = options?.disabled;
 
-      let id = `row-${i}`;
+      let id = `row-${nanoid(4)}`;
       if (disabled) id += " (disabled)";
 
       return {
@@ -69,7 +69,7 @@ export const generateItems = (
 ) => {
   return Array(count)
     .fill(0)
-    .map((e, i): ItemDefinition => {
+    .map((): ItemDefinition => {
       const row = rows[Math.ceil(Math.random() * rows.length - 1)];
       const rowId = row.id;
       const disabled = row.disabled || options?.disabled;
@@ -80,7 +80,7 @@ export const generateItems = (
         options?.maxDuration,
       );
 
-      let id = `item-${i}`;
+      let id = `item-${nanoid(4)}`;
       if (disabled) id += " (disabled)";
 
       return {

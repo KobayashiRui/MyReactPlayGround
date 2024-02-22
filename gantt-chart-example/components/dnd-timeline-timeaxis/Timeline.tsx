@@ -13,15 +13,26 @@ import { hoursToMilliseconds, format, minutesToMilliseconds } from "date-fns";
 
 const timeAxisMarkers: MarkerDefinition[] = [
   {
+    value: minutesToMilliseconds(60),
+    maxTimeframeSize: hoursToMilliseconds(24),
+    getLabel: (date: Date) => format(date, "HH"),
+  },
+  {
     value: minutesToMilliseconds(15),
     maxTimeframeSize: hoursToMilliseconds(24),
     getLabel: (date: Date) => format(date, "m"),
   },
 ];
 
+interface RowGroupDefinition {
+  id: string;
+  rowIds: string[];
+}
+
 interface TimelineProps {
   rows: RowDefinition[];
   items: ItemDefinition[];
+  row_groups: RowGroupDefinition[]; 
 }
 
 function Timeline(props: TimelineProps) {
@@ -42,7 +53,7 @@ function Timeline(props: TimelineProps) {
             <Subrow key={`${row.id}-${index}`}>
               {subrow.map((item) => (
                 <Item id={item.id} key={item.id} relevance={item.relevance}>
-                  {`Item ${item.id}`}
+                  {`${item.id}`}
                 </Item>
               ))}
             </Subrow>
