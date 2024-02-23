@@ -8,7 +8,6 @@ interface GroupSidebarProps {
 }
 
 function GroupSidebar(props: GroupSidebarProps) {
-  console.log("aaa",props.grouped_sub_rows)
   const row_height =  useMemo(
     ()=> {
       let new_row_height = 0
