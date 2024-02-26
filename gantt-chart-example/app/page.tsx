@@ -8,6 +8,7 @@ export default function Home() {
       <Link href={"/gantt-task-react-test1"}>gantt-task-react-test1</Link>
       <Link href={"/dnd-timeline-simple"}>dnd-timeline-simple</Link>
       <Link href={"/dnd-timeline-time"}>dnd-timeline-time</Link>
+      <Link href={"/dnd-timeline-time2"}>dnd-timeline-time v2</Link>
     </main>
   );
 }
